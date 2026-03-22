@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madara Uchiha - O Lendário Uchiha</title>
+    <style>
+
+        #btnMusica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background: transparent;
+    padding: 0;
+
+    box-shadow: 0 0 20px red, 0 0 40px crimson;
+}
+
+.imgMusica {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* efeito hover */
+#btnMusica:hover {
+    transform: scale(1.1);
+}
+
+        #btnMusica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background: transparent;
+    padding: 0;
+
+    box-shadow: 0 0 20px red, 0 0 40px crimson;
+    
+    .imgMusica {
+    animation: girar 5s linear infinite;
+    
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+}
+
+.imgMusica {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* efeito hover */
+#btnMusica:hover {
+    transform: scale(1.1);
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0e27;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* Animações */
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 30px rgba(168, 85, 247, 0.5); }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(to bottom, #0a0e27, rgba(10, 14, 39, 0.8));
+            z-index: 1000;
+            border-bottom: 1px solid rgba(45, 55, 72, 0.5);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.5rem;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .logo-circle {
+            width: 32px;
+            height: 32px;
+            background-color: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #dc2626;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-hero-W65EftUWDMkH2Dz6DCuchp.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #dc2626;
+            color: white;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #b91c1c;
+            box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: #dc2626;
+            color: white;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: #dc2626;
+            color: white;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Seções */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #dc2626, #a855f7);
+            margin: 0 auto 3rem;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(to bottom, #0a0e27, rgba(30, 41, 59, 0.3), #0a0e27);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .about-card {
+            background-color: #1a1f3a;
+            border: 1px solid #2d3748;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .about-card:hover {
+            border-color: #dc2626;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(220, 38, 38, 0.3);
+        }
+
+        .about-card p {
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Abilities Section */
+        .abilities {
+            background: linear-gradient(to bottom, #0a0e27, rgba(15, 23, 42, 0.3));
+        }
+
+        .abilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .ability-card {
+            background-color: #1a1f3a;
+            border: 1px solid #2d3748;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .ability-card:hover {
+            border-color: #dc2626;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(220, 38, 38, 0.3);
+        }
+
+        .ability-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #dc2626;
+        }
+
+        .ability-card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        /* Quotes Section */
+        .quotes {
+            background: linear-gradient(to bottom, #0a0e27, rgba(30, 41, 59, 0.3), #0a0e27);
+        }
+
+        .quote-card {
+            background-color: #1a1f3a;
+            border: 1px solid #2d3748;
+            border-left: 4px solid #dc2626;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .quote-card:hover {
+            box-shadow: 0 8px 40px rgba(220, 38, 38, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .quote-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #e5e7eb;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            text-align: right;
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(to bottom, #0a0e27, rgba(15, 23, 42, 0.3));
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1rem 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        
+        footer {
+            background-color: #0f1419;
+            border-top: 1px solid #2d3748;
+            padding: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #dc2626;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: zoomIn 0.3s;
+        }
+
+        @keyframes zoomIn {
+            from { transform: translate(-50%, -50%) scale(0.8); }
+            to { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #dc2626;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            </footer>
+
+
+<button onclick="toggleMusica()" id="btnMusica"> Pausar Música</button>
+
+<audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Modal para Galeria -->
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+        #btnMusica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.imgMusica {
+    animation: girar 5s linear infinite;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+    </style>
+    
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav>
+        <div class="logo">
+           
+            <img src="Mangekyou_Sharingan_Madara copiar.png" alt="logo" class="logo-img"
+                         <span>MADARA</span>
+        </div>
+        <ul class="nav-links">
+        <li><a onclick="scrollToSection('about')">Sobre</a></li>
+<li><a onclick="scrollToSection('abilities')">Habilidades</a></li>
+<li><a onclick="scrollToSection('quotes')">Citações</a></li>
+<li><a onclick="scrollToSection('gallery')">Galeria</a></li>
+        </ul>
+        <button id="btnMusica" onclick="toggleMusica()"></button>
+
+</footer>
+
+
+
+<audio id="bgMusic" loop>
+    <source src="musica.mp3.mp3" type="audio/mpeg">
+</audio>
+<script>
+function toggleMusica() {
+    const musica = document.getElementById("bgMusic");
+    const img = document.querySelector(".imgMusica");
+
+    if (musica.paused) {
+        musica.play();
+        img.style.animationPlayState = "running";
+    } else {
+        musica.pause();
+        img.style.animationPlayState = "paused";
+    }
+}
+
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        modal.style.display = 'block';
+        modalImage.src = imageSrc;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('imageModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    document.addEventListener("click", function () {
+        const musica = document.getElementById("bgMusic");
+        musica.volume = 0.3;
+        musica.play();
+    }, { once: true });
+</script>
+
+<!-- Modal para Galeria -->
+
+    </nav>
+
+    <!-- Hero Section -->
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MADARA UCHIHA</h1>
+            <p>O Lendário Líder do Clã Uchiha</p>
+            <p class="subtitle">" Alguém que queria salvar o mundo… mas deixou de acreditar nas pessoas"</p>
+            <button class="btn btn-primary" onclick="scrollToSection('about')">Sobre</button>
+            <button class="btn btn-secondary" onclick="scrollToSection('gallery')">Ver Galeria</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Madara</h2>
+            <div class="section-divider"></div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="capa.jpg" alt="Madara Uchiha">
+                </div>
+
+                <div>
+                    <div class="about-card">
+                        <h3>Origem e História</h3>
+                        <p>Madara Uchiha nasceu durante a Era dos Estados Combatentes, um período marcado por guerras intermináveis entre clãs. Como um dos cinco filhos de Tajima Uchiha, desde sua infância esteve no campo de batalha contra os maiores rivais de seu clã: os Senju.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Fundação de Konoha</h3>
+                        <p>Madara fundou Konohagakure ao lado de seu rival Hashirama Senju, com a intenção de iniciar uma era de paz. Contudo, quando os dois não concordaram quanto ao meio para alcançar a paz, eles lutaram pelo controle da aldeia em um combate histórico.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Plano Olho da Lua</h3>
+                        <p>Burlando sua própria morte através do Izanagi, Madara se escondeu e estendeu sua vida para trabalhar em seus planos para acabar com os conflitos mundiais. Incapaz de concluí-los em vida, confiou seu conhecimento a Obito Uchiha.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abilities Section -->
+    <section class="abilities" id="abilities">
+        <div class="container">
+            <h2 class="section-title">Habilidades e Poderes</h2>
+            <div class="section-divider"></div>
+
+            <div class="abilities-grid">
+                <div class="ability-card">
+                    <h3> <img src="Sharingan_triple.png" alt="">Sharingan</h3>
+                    <p>O Olho do Uchiha com capacidades especiais de cópia de jutsu e genjutsu.</p>
+                </div>
+
+                <div class="ability-card">
+                    <h3> <img src="Mangekyou_Sharingan_Madara copiar.png" alt="">Mangekyō Sharingan</h3>
+                    <p>Forma avançada do Sharingan com habilidades únicas e poder devastador.</p>
+                </div>
+
+<div class="ability-card">
+                    <h3> <img src="rine.png" alt="">Rinnegan</h3>
+                    <p>É considerado o dojutsu mais poderoso do universo, conhecido como o “Olho da Reencarnação” e associado a poderes quase divinos.</p>
+                </div>
+
+                <div class="ability-card">
+                    <h3> <img src="s.png" alt=""> Susanoo Perfeito</h3>
+                    <p>Técnica poderosa que cria uma entidade espiritual gigante de combate. Esse poder está diretamente ligado ao lendário Hashirama Senju.</p>
+                </div>
+
+                
+
+                <div class="ability-card">
+                    <h3> <img src="mada.png" alt="">Mokuton</h3>
+                    <p>Famosa por permitir a criação e controle de árvores e florestas inteiras em batalha.</p>
+                </div>
+
+                <div class="ability-card">
+                    <h3> <img src="pngkey.com-naruto-png-29126.png" alt="">Nove Caudas</h3>
+                    <p>Capacidade de controlar e convocar o Kurama, a Besta de Cauda Única.</p>
+                </div>
+                
+              
+
+                <div class="ability-card">
+                    <h3> <img src="espada.png" alt="" text-align: left;  >Gunbai + Kama</h3>
+                    <p>Gunbai + Kama são armas clássicas, habilidade absurda até sem poderes divinos</p>
+                </div>
+
+                <div class="ability-card">
+                    <h3> <img src="edo.png" <p> <h3>Edo Tensei</h3> </p> 
+                    <p>Reencarnação do Mundo Impuro é um dos jutsus mais sombrios e perigosos do universo</p>
+                </div>
+
+  <div class="ability-card">
+                    <h3> <img src="deus.png" alt="">Jinchūriki do Dez-Caudas</h3>
+                    <p>Madara se torna hospedeiro do Dez-Caudas</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quotes" id="quotes">
+        <div class="container">
+            <h2 class="section-title">Citações Icônicas</h2>
+            <div class="section-divider"></div>
+
+            <div class="quote-card">
+                <p class="quote-text">"Escute... Neste mundo, sempre que houver uma luz, haverá também sombras. Enquanto o conceito de vencedores existir também deve haver perdedores."</p>
+                <p class="quote-author">— Madara Uchiha</p>
+            </div>
+
+            <div class="quote-card">
+                <p class="quote-text">"Existem nexos, relações causais que não podem ser separadas. Eu quero romper o destino do mundo. Um mundo só de vitoriosos. Um mundo só de paz."</p>
+                <p class="quote-author">— Madara Uchiha</p>
+            </div>
+
+            <div class="quote-card">
+                <p class="quote-text">"Amo a luta acima de tudo: das vistas, os sons e até mesmo o gosto de meu próprio sangue."</p>
+                <p class="quote-author">— Madara Uchiha</p>
+            </div>
+
+            <div class="quote-card">
+                <p class="quote-text">"Poder é tudo, e sem poder, você não pode proteger nada. Tudo que você ganha é perdido para aqueles que têm mais poder que você."</p>
+                <p class="quote-author">— Madara Uchiha</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeria</h2>
+            <div class="section-divider"></div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-hero-W65EftUWDMkH2Dz6DCuchp.webp')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-hero-W65EftUWDMkH2Dz6DCuchp.webp" alt="Madara Hero">
+                    <div class="gallery-overlay">
+                        <h3>O Poder Absoluto</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openModal('https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-sharingan-kMpQEzPmBQ7tuRNS4RLbr5.webp')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-sharingan-kMpQEzPmBQ7tuRNS4RLbr5.webp" alt="Madara Sharingan">
+                    <div class="gallery-overlay">
+                        <h3>Olhos Vermelhos</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openModal('https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-battle-X4La3DF8quCeVkNHpiz3TN.webp')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663082392874/bbmdgmJHA4JPyzemCNfZQg/madara-battle-X4La3DF8quCeVkNHpiz3TN.webp" alt="Madara Battle">
+                    <div class="gallery-overlay">
+                        <h3>Força Destrutiva</h3>
+                    </div>
+                </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#about">Sobre</a>
+            <a href="#abilities">Habilidades</a>
+            <a href="#quotes">Citações</a>
+            <a href="#gallery">Galeria</a>
+        </div>
+        <p>© 2026 Madara Uchiha. Todos os direitos reservados carai.</p>
+        <p>Este site é um fã-site não oficial. Naruto é do Masashi Kishimoto.</p>
+
+         <button id="btnMusica" onclick="toggleMusica()">
+    <img src="Mangekyou_Sharingan_Madara copiar.png" class="imgMusica">
+</button>
+    </footer>
+
+    <!-- Modal para Galeria -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
